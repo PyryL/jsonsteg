@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "stegjson"
+version = "0.1.0"
+description = "Write payload into JSON without modifying it"
+authors = ["PyryL <pyry@pyry.info>"]
+license = "Proprietary"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

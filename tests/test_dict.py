@@ -1,16 +1,12 @@
 import unittest
-from random import randint, shuffle, randbytes, seed
+from random import randbytes, seed
 from stegjson import DictionaryWriter, DictionaryReader
-
-def rand_dict():
-    keys = list(range(1, 1000))
-    shuffle(keys)
-    return { k: randint(100, 1000) for k in keys }
+from tests.data_creator import create_dictionary
 
 class DictTest(unittest.TestCase):
     def setUp(self):
         seed(42)
-        self.dictionary = rand_dict()
+        self.dictionary = create_dictionary(1000)
         self.payload = randbytes(89)
         self.writer = DictionaryWriter(self.dictionary, self.payload)
         self.reader = DictionaryReader(self.writer.output)

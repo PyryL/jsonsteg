@@ -19,7 +19,7 @@ class DictionaryReaderTest(unittest.TestCase):
 
     def test_reading_bits_from_keys(self):
         correct_bits = [0,0,1,1,0,1,0,1,0]
-        assert self.reader._read_bits_from_keys() == correct_bits
+        self.assertListEqual(self.reader._read_bits_from_keys(), correct_bits)
 
     def test_payload(self):
-        assert self.reader.payload == bytes([53])
+        self.assertEqual(self.reader.payload, bytes([53]))

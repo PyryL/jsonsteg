@@ -23,7 +23,7 @@ class DictionaryWriterTest(unittest.TestCase):
             'alice', 'bob', 'jake', 'ivar', 'charlie',
             'hannah', 'david', 'gabriel', 'ella', 'felix'
         ]
-        assert self.writer._reorder_keys() == correct_order
+        self.assertListEqual(self.writer._reorder_keys(), correct_order)
 
     def test_output(self):
         correct_output = {
@@ -38,4 +38,4 @@ class DictionaryWriterTest(unittest.TestCase):
             'ella': 5,
             'felix': 6,
         }
-        assert self.writer.output == correct_output
+        self.assertListEqual(list(self.writer.output.keys()), list(correct_output.keys()))

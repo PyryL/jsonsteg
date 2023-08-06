@@ -10,4 +10,4 @@ class ArrayWriterTest(unittest.TestCase):
         payload = randbytes(100)
         writer = ArrayWriter(test_array, payload)
         reader = ArrayReader(writer.output)
-        assert reader.payload.startswith(payload)
+        self.assertTrue(reader.payload.startswith(payload))

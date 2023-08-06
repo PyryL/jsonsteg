@@ -8,6 +8,6 @@ class ArrayWriterTest(unittest.TestCase):
         payload = bytes([0, 42, 88, 255])
         writer = ArrayWriter(test_array[:], payload)
         
-        assert len(writer.output) == len(test_array)
+        self.assertCountEqual(writer.output, test_array)
         for i in range(len(writer.output)):
-            assert writer.output[i] == test_array[i]
+            self.assertDictEqual(writer.output[i], test_array[i])

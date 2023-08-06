@@ -16,7 +16,7 @@ class DictTest(unittest.TestCase):
         self.reader = DictionaryReader(self.writer.output)
 
     def test_read_payload_matches_written_payload(self):
-        assert self.reader.payload.startswith(self.payload)
+        self.assertTrue(self.reader.payload.startswith(self.payload))
 
     def test_writing_does_not_lose_keys(self):
-        assert sorted(self.dictionary.keys()) == sorted(self.writer.output.keys())
+        self.assertListEqual(sorted(self.dictionary.keys()), sorted(self.writer.output.keys()))

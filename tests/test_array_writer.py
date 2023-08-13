@@ -1,5 +1,5 @@
 import unittest
-from stegjson import ArrayWriter
+from jsonsteg import ArrayWriter
 from tests.data_creator import create_dictionary_array
 
 class ArrayWriterTest(unittest.TestCase):

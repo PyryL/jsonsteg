@@ -1,5 +1,5 @@
 from math import floor
-from stegjson.dict_reader import DictionaryReader
+from jsonsteg.dict_reader import DictionaryReader
 
 class ArrayReader:
     def __init__(self, data: list[dict]) -> None:

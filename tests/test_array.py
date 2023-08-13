@@ -1,5 +1,5 @@
 import unittest
-from stegjson import ArrayWriter, ArrayReader
+from jsonsteg import ArrayWriter, ArrayReader
 from tests.data_creator import create_dictionary_array
 from random import randbytes, seed
 

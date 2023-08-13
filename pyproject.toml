@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "stegjson"
+name = "jsonsteg"
 version = "0.1.0"
 description = "Write payload into JSON without modifying it"
 authors = ["PyryL <pyry@pyry.info>"]

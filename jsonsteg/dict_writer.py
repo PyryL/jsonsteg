@@ -1,4 +1,4 @@
-from stegjson.utils.byte_converter import bytes_to_bits
+from jsonsteg.utils.byte_converter import bytes_to_bits
 
 class DictionaryWriter:
     def __init__(self, data: dict, payload: bytes) -> None:

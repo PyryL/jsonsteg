@@ -1,6 +1,6 @@
 import unittest
 from random import randbytes, seed
-from stegjson import DictionaryWriter, DictionaryReader
+from jsonsteg import DictionaryWriter, DictionaryReader
 from tests.data_creator import create_dictionary
 
 class DictTest(unittest.TestCase):

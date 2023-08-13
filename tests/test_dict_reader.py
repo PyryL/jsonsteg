@@ -1,5 +1,5 @@
 import unittest
-from stegjson import DictionaryReader
+from jsonsteg import DictionaryReader
 
 class DictionaryReaderTest(unittest.TestCase):
     def setUp(self):

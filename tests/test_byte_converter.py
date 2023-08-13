@@ -1,5 +1,5 @@
 import unittest
-import stegjson.utils.byte_converter as converter
+import jsonsteg.utils.byte_converter as converter
 
 class ByteConverterTest(unittest.TestCase):
     def test_bytes_to_bits_empty_array(self):

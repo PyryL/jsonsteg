@@ -1,5 +1,5 @@
 from math import floor
-from stegjson.utils.byte_converter import bits_to_bytes
+from jsonsteg.utils.byte_converter import bits_to_bytes
 
 class DictionaryReader:
     def __init__(self, data: dict) -> None:

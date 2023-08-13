@@ -1,5 +1,5 @@
 from math import floor
-from stegjson.dict_writer import DictionaryWriter
+from jsonsteg.dict_writer import DictionaryWriter
 
 class ArrayWriter:
     def __init__(self, data: list[dict], payload: bytes) -> None:

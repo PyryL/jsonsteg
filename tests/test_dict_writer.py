@@ -1,5 +1,5 @@
 import unittest
-from stegjson import DictionaryWriter
+from jsonsteg import DictionaryWriter
 from tests.data_creator import create_dictionary
 
 class DictionaryWriterTest(unittest.TestCase):

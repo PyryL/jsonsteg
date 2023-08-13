@@ -12,3 +12,9 @@ class ArrayReaderTest(unittest.TestCase):
         test_array = create_dictionary_array(4, 9)
         reader = ArrayReader(test_array)
         self.assertEqual(reader.payload, reader.payload)
+
+    def test_reading_heterogeneous_array_fails(self):
+        test_array = create_dictionary_array(4, 9)
+        test_array[1].popitem()
+        test_array[3]["new key"] = 42
+        self.assertRaisesRegex(RuntimeError, r"read \d+ instead of 1", lambda : ArrayReader(test_array).payload)

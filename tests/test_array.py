@@ -11,3 +11,12 @@ class ArrayWriterTest(unittest.TestCase):
         writer = ArrayWriter(test_array, payload)
         reader = ArrayReader(writer.output)
         self.assertTrue(reader.payload.startswith(payload))
+
+    def test_writing_multiple_bytes_per_item(self):
+        # 9 bytes cannot be stored in 3-lengthed array 1 byte per item
+        # but can be stored in it 3 bytes per item
+        test_array = create_dictionary_array(3, 25)
+        payload = bytes([0, 42, 88, 255, 17, 3, 243, 90, 123])
+        writer = ArrayWriter(test_array, payload)
+        reader = ArrayReader(writer.output)
+        self.assertTrue(reader.payload.startswith(payload))

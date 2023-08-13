@@ -8,9 +8,9 @@ class ArrayWriter:
         self._output = None
 
     def _calculate_output(self) -> None:
-        bytes_per_array_item = floor(len(self._data[0].keys()) / 8)
+        bytes_per_array_item = floor((len(self._data[0].keys())-1) / 8)
         if bytes_per_array_item == 0:
-            raise ValueError("Array item must contain at least 8 keys")
+            raise ValueError("Array item must contain at least 9 keys")
 
         # write data into array items
         self._output = []

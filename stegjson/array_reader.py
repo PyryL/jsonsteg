@@ -7,9 +7,9 @@ class ArrayReader:
         self._payload = None
 
     def _calculate_payload(self) -> None:
-        bytes_per_array_item = floor(len(self._data[0].keys()) / 8)
+        bytes_per_array_item = floor((len(self._data[0].keys())-1) / 8)
         if bytes_per_array_item == 0:
-            raise ValueError("Array item must contain at least 8 keys")
+            raise ValueError("Array item must contain at least 9 keys")
 
         # read data from array items
         self._payload = bytearray()

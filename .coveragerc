@@ -1,0 +1,3 @@
+[run]
+source = stegjson
+omit = stegjson/**/__init__.py

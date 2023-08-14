@@ -1,8 +1,9 @@
 from cli.read_subcommand import read_subcommand
 from cli.write_subcommand import write_subcommand
+from cli.utils.console import Console
 import argparse
 
-def start(args: list[str] = None):
+def start(args: list[str] = None, console = Console()):
     parser = argparse.ArgumentParser(
         description="Write payload into JSON without modifying it",
     )
@@ -22,6 +23,6 @@ def start(args: list[str] = None):
 
     arguments = parser.parse_args(args)
     if arguments.command == "read":
-        read_subcommand(arguments)
+        read_subcommand(arguments, console)
     elif arguments.command == "write":
-        write_subcommand(arguments)
+        write_subcommand(arguments, console)

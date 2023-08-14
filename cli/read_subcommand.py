@@ -3,9 +3,9 @@ from cli.utils.read_json_from_file import read_json_from_file
 from cli.utils.determine_json_type import determine_dict_or_array
 import json
 
-def read_subcommand(arguments) -> None:
+def read_subcommand(arguments, console) -> None:
     # read input JSON
-    parsed_input = read_json_from_file(arguments.JSON)
+    parsed_input = read_json_from_file(arguments.JSON, console)
     if parsed_input is None:
         return
 
@@ -16,7 +16,7 @@ def read_subcommand(arguments) -> None:
     elif input_type == "array":
         payload = ArrayReader(parsed_input).payload
     else:
-        print("Input JSON file is not a list or a dictionary")
+        console.print("Input JSON file is not a list or a dictionary")
         return
 
     # output read payload
@@ -24,4 +24,4 @@ def read_subcommand(arguments) -> None:
         with open(arguments.output, "wb") as file:
             file.write(payload)
     else:
-        print(payload.decode())
+        console.print(payload.decode())

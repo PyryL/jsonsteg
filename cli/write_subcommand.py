@@ -3,9 +3,9 @@ from cli.utils.read_json_from_file import read_json_from_file
 from jsonsteg import DictionaryWriter, ArrayWriter
 import json
 
-def write_subcommand(arguments) -> None:
+def write_subcommand(arguments, console) -> None:
     # read input JSON
-    parsed_input = read_json_from_file(arguments.JSON)
+    parsed_input = read_json_from_file(arguments.JSON, console)
     if parsed_input is None:
         return
 
@@ -23,7 +23,7 @@ def write_subcommand(arguments) -> None:
     elif input_type == "array":
         output = ArrayWriter(parsed_input, payload).output
     else:
-        print("Input JSON file is not a list or a dictionary")
+        console.print("Input JSON file is not a list or a dictionary")
         return
 
     # output modified JSON

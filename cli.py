@@ -2,6 +2,16 @@ import jsonsteg
 import argparse
 import json
 
+def read_json_from_file(filename: str):
+    try:
+        with open(filename, "rb") as file:
+            return json.load(file)
+    except json.JSONDecodeError:
+        print("Input JSON file is not in JSON format")
+    except FileNotFoundError:
+        print("Input JSON file does not exist")
+    return None
+
 def determine_dict_or_array(json) -> str:
     if type(json) == dict:
         return "dict"
@@ -12,11 +22,8 @@ def determine_dict_or_array(json) -> str:
 
 def read_subcommand(arguments) -> None:
     # read input JSON
-    try:
-        with open(arguments.JSON, "rb") as file:
-            parsed_input = json.load(file)
-    except json.JSONDecodeError:
-        print("Input JSON file is not in JSON format")
+    parsed_input = read_json_from_file(arguments.JSON)
+    if parsed_input is None:
         return
 
     # determine input JSON type and read data from it
@@ -27,6 +34,7 @@ def read_subcommand(arguments) -> None:
         payload = jsonsteg.ArrayReader(parsed_input).payload
     else:
         print("Input JSON file is not a list or a dictionary")
+        return
 
     # output read payload
     if arguments.output is not None:
@@ -37,11 +45,8 @@ def read_subcommand(arguments) -> None:
 
 def write_subcommand(arguments) -> None:
     # read input JSON
-    try:
-        with open(arguments.JSON, "rb") as file:
-            parsed_input = json.load(file)
-    except json.JSONDecodeError:
-        print("Input JSON file is not in JSON format")
+    parsed_input = read_json_from_file(arguments.JSON)
+    if parsed_input is None:
         return
 
     # read payload
@@ -59,6 +64,7 @@ def write_subcommand(arguments) -> None:
         output = jsonsteg.ArrayWriter(parsed_input, payload).output
     else:
         print("Input JSON file is not a list or a dictionary")
+        return
 
     # output modified JSON
     with open(arguments.JSON, "w") as file:

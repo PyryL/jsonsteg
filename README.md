@@ -1,6 +1,9 @@
 # JSON steganography
 
-_Write payload into JSON without modifying it_
+_Write payload into JSON without modifying it_	
+
+![Build status](https://github.com/PyryL/jsonsteg/actions/workflows/main.yml/badge.svg)
+![Branch coverage](https://codecov.io/gh/PyryL/jsonsteg/branch/main/graph/badge.svg?token=YT08CLBMMK)
 
 
 ## Usage

@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone git repository
+        uses: actions/checkout@v3.5.3
+      - name: Setup Python 3.9
+        uses: actions/setup-python@v4.7.0
+        with:
+          python-version: 3.9
+      - name: Install Poetry
+        run: pip install poetry
+      - name: Install dependencies
+        run: poetry install
+      - name: Run tests
+        run: poetry run invoke coverage
+      - name: Generate coverage report
+        run: poetry run coverage xml
+      - name: Send coverage report to Codecov
+        uses: codecov/codecov-action@v3.1.4
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}

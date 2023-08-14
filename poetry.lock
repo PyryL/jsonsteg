@@ -108,7 +108,7 @@ files = [
 name = "invoke"
 version = "2.2.0"
 description = "Pythonic task execution"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.6"
 files = [
@@ -182,4 +182,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "777406c9bccfbc71a6551db92adde3aaa6f6f615487bd6cd8d60df683cdac02a"
+content-hash = "a08164694159c7aafda141c6639b20946e3be78ae3b4a1548b862aae7777e779"

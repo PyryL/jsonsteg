@@ -67,7 +67,8 @@ def write_subcommand(arguments) -> None:
         return
 
     # output modified JSON
-    with open(arguments.JSON, "w") as file:
+    output_filename = arguments.JSON if arguments.output is None else arguments.output
+    with open(output_filename, "w") as file:
         json.dump(output, file, ensure_ascii=False)
 
 def start():
@@ -82,10 +83,10 @@ def start():
     read_parser.add_argument("JSON", help="The JSON file from which to read the data")
 
     write_parser = command_subparser.add_parser("write", help="write data to JSON")
-    # TODO: output file instead of in-place
     write_input_group = write_parser.add_mutually_exclusive_group(required=True)
-    write_input_group.add_argument("--input", "-i", help="Text to write to JSON")
+    write_input_group.add_argument("--input", "-i", metavar="TEXT", help="Text to write to JSON")
     write_input_group.add_argument("--input-file", "-I", metavar="FILE", help="A file whose content to write to JSON")
+    write_parser.add_argument("--output", "-o", metavar="FILE", help="A file in which to write the output instead of modifying JSON")
     write_parser.add_argument("JSON", help="The JSON to use to store the data")
 
     arguments = parser.parse_args()

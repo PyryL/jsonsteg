@@ -2,7 +2,7 @@ from cli.read_subcommand import read_subcommand
 from cli.write_subcommand import write_subcommand
 import argparse
 
-def start():
+def start(args: list[str] = None):
     parser = argparse.ArgumentParser(
         description="Write payload into JSON without modifying it",
     )
@@ -20,7 +20,7 @@ def start():
     write_parser.add_argument("--output", "-o", metavar="FILE", help="A file in which to write the output instead of modifying JSON")
     write_parser.add_argument("JSON", help="The JSON to use to store the data")
 
-    arguments = parser.parse_args()
+    arguments = parser.parse_args(args)
     if arguments.command == "read":
         read_subcommand(arguments)
     elif arguments.command == "write":

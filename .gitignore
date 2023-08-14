@@ -5,3 +5,9 @@ __pycache__/
 # Coverage
 /.coverage
 /htmlcov/
+
+# Unit tests' example files
+valid.json
+invalid.json
+output.json
+payload.txt

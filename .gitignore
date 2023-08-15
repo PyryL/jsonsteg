@@ -11,3 +11,6 @@ valid.json
 invalid.json
 output.json
 payload.txt
+
+# Build
+/dist/

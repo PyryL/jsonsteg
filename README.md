@@ -86,9 +86,3 @@ poetry run invoke coverage-report
 ## How is it done?
 
 Read more about the mechanism [here](docs/mechanism.md).
-
-
-## License
-
-Copyright (c) 2023 Pyry Lahtinen.
-All rights reserved.

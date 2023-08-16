@@ -82,6 +82,17 @@ and create HTML coverage report with
 poetry run invoke coverage-report
 ```
 
+Publish the package on pypi.org or test.pypi.org by one of the following commands:
+
+```
+poetry run invoke publish
+poetry run invoke publish-test
+```
+
+When running either one of the commands above,
+you must have PYPI token stored in an environment variable named
+`POETRY_PYPI_TOKEN_PYPI` or `POETRY_PYPI_TOKEN_TEST_PYPI`, respectively.
+
 
 ## How is it done?
 

@@ -2,8 +2,10 @@
 
 _Write payload into JSON without modifying it_	
 
+![Python version](https://img.shields.io/pypi/pyversions/jsonsteg)
 ![Build status](https://github.com/PyryL/jsonsteg/actions/workflows/main.yml/badge.svg)
 ![Branch coverage](https://codecov.io/gh/PyryL/jsonsteg/branch/main/graph/badge.svg?token=YT08CLBMMK)
+[![PyPI](https://img.shields.io/pypi/v/jsonsteg)](https://pypi.org/project/jsonsteg/)
 
 
 ## Usage

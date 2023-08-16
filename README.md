@@ -2,11 +2,22 @@
 
 _Write payload into JSON without modifying it_	
 
+![Python version](https://img.shields.io/pypi/pyversions/jsonsteg)
 ![Build status](https://github.com/PyryL/jsonsteg/actions/workflows/main.yml/badge.svg)
 ![Branch coverage](https://codecov.io/gh/PyryL/jsonsteg/branch/main/graph/badge.svg?token=YT08CLBMMK)
+[![PyPI](https://img.shields.io/pypi/v/jsonsteg)](https://pypi.org/project/jsonsteg/)
 
 
-## Usage
+## Installation
+
+Install jsonsteg via [PyPI](https://pypi.org/project/jsonsteg/):
+
+```
+pip install jsonsteg
+```
+
+
+## CLI usage
 
 Use command line interface via `jsonsteg` command.
 
@@ -53,6 +64,22 @@ jsonsteg --help
 jsonsteg read --help
 jsonsteg write --help
 ```
+
+
+## Python usage
+
+Jsonsteg can also be used as a Python package:
+
+```
+import jsonsteg
+
+jsonsteg.DictionaryReader(json_dictionary)
+jsonsteg.DictionaryWriter(json_dictionary, payload_bytes)
+jsonsteg.ArrayReader(json_array)
+jsonsteg.ArrayWriter(json_array, payload_bytes)
+```
+
+Writer objects have `output` property and reader objects have `payload` property.
 
 
 ## Development

@@ -17,7 +17,7 @@ pip install jsonsteg
 ```
 
 
-## Usage
+## CLI usage
 
 Use command line interface via `jsonsteg` command.
 
@@ -64,6 +64,22 @@ jsonsteg --help
 jsonsteg read --help
 jsonsteg write --help
 ```
+
+
+## Python usage
+
+Jsonsteg can also be used as a Python package:
+
+```
+import jsonsteg
+
+jsonsteg.DictionaryReader(json_dictionary)
+jsonsteg.DictionaryWriter(json_dictionary, payload_bytes)
+jsonsteg.ArrayReader(json_array)
+jsonsteg.ArrayWriter(json_array, payload_bytes)
+```
+
+Writer objects have `output` property and reader objects have `payload` property.
 
 
 ## Development

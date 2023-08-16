@@ -8,6 +8,15 @@ _Write payload into JSON without modifying it_
 [![PyPI](https://img.shields.io/pypi/v/jsonsteg)](https://pypi.org/project/jsonsteg/)
 
 
+## Installation
+
+Install jsonsteg via [PyPI](https://pypi.org/project/jsonsteg/):
+
+```
+pip install jsonsteg
+```
+
+
 ## Usage
 
 Use command line interface via `jsonsteg` command.
